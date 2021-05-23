@@ -1,4 +1,4 @@
-# omputer-Architecture-and-system-programming-laboratory
+# caspl = Computer Architecture and system programming laboratory
 University Course - Computer Architecture and System Programming Laboratory - Labs code
 
 Topics Covered in the Labs (including special lectures)
