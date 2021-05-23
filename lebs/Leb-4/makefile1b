@@ -1,0 +1,15 @@
+all: exec
+
+libs:c-libs s-libs
+
+s-libs:start.s
+	nasm -f elf32 start.s -o start.o
+
+c-libs:util.c util.h task1b.c
+	gcc -m32 -Wall -ansi -c -nostdlib -fno-stack-protector util.c -o util.o
+	gcc -m32 -Wall -ansi -c -nostdlib -fno-stack-protector task1b.c -o task1b.o
+exec:c-libs s-libs
+	ld -m elf_i386 start.o task1b.o util.o -o task1b
+	rm -rf util.o task1b.o start.o
+.PHONY: clean
+	rm -rf task1b
